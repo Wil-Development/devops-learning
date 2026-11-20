@@ -1,2 +1,8 @@
-# devops-learning-linux
-Documenting my Linux learning journey with CoderCo: practical exercises, commands, and OverTheWire Bandit solutions.
+# DevOps Learning
+
+Documenting my DevOps learning journey with CoderCo.
+
+## Topics
+
+- [Linux](Linux/) — Linux commands and Bandit write-ups.
+- [Bash](Bash/) — Bash scripting and Battle Arena exercises.
