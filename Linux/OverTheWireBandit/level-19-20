@@ -1,0 +1,23 @@
+# Bandit Level 19 → 20
+
+## Goal
+
+Understand how a setuid executable uses the file owner's permissions.
+
+## Approach
+
+I started by running `ls -l` in the home directory to check the files, their owners, and their permissions.
+
+```bash
+ls -l
+```
+
+The clue was the `s` in the owner's execute position, as in `-rwsr-x---`. That showed me the executable had the **setuid** bit enabled. The owner column also mattered because it told me whose identity the program would run under.
+
+I ran the executable without arguments to see its usage message and understand what it expected.
+
+## What I learned
+
+My shell was still running as `bandit19`. When the setuid executable ran, Linux gave that process the file owner's effective user ID. That explained why the program could have different access from a command I ran directly in my shell.
+
+The main thing I’ll remember is to check **both the permission bits and the owner** when I see a setuid executable.
